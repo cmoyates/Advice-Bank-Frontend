@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Advice-Bank-Frontend/static/css/main.229d0cf6.chunk.css",
-    "main.js": "/Advice-Bank-Frontend/static/js/main.56d26326.chunk.js",
-    "main.js.map": "/Advice-Bank-Frontend/static/js/main.56d26326.chunk.js.map",
+    "main.js": "/Advice-Bank-Frontend/static/js/main.93bbe469.chunk.js",
+    "main.js.map": "/Advice-Bank-Frontend/static/js/main.93bbe469.chunk.js.map",
     "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.b29ff9a6.js",
     "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.b29ff9a6.js.map",
     "static/js/2.894b93bc.chunk.js": "/Advice-Bank-Frontend/static/js/2.894b93bc.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b29ff9a6.js",
     "static/js/2.894b93bc.chunk.js",
     "static/css/main.229d0cf6.chunk.css",
-    "static/js/main.56d26326.chunk.js"
+    "static/js/main.93bbe469.chunk.js"
   ]
 }
