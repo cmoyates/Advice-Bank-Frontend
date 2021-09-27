@@ -1,20 +1,10 @@
-import { AppBar, Button, Grid, Stack, TextField, Toolbar, Typography } from '@mui/material'
-import React, { useState, useEffect } from 'react'
+import { AppBar, Avatar, Button, Grid, IconButton, Stack, TextField, Toolbar, Typography } from '@mui/material'
+import React, { useState, useEffect, useRef } from 'react'
 import PostCard from '../components/PostCard';
 import PostDetailsDialog from '../components/PostDetailsDialog';
+import SettingsMenu from '../components/SettingsMenu';
 import SubmitPostDialog from "../components/SubmitPostDialog";
-
-
-interface Post {
-    post_id: number,
-    user_id: number,
-    user_name: string,
-    user_img: string,
-    title: string,
-    content: string,
-    tags: Array<string>,
-    ts: string
-};
+import { Post, User } from '../types/maintypes';
 
 const fillerPost: Post = {
     post_id: -1,
@@ -27,15 +17,17 @@ const fillerPost: Post = {
     ts: ""
 }
 
-
 interface Props {
-    username: string
+    userData: User | null
 }
 
 const Dashboard: React.FC<Props> = (props) => {
 
+    const anchorRef = useRef(null);
+
     const [submitDialogOpen, setSubmitDialogOpen] = useState<boolean>(false);
     const [detailsDialogOpen, setDetailsDialogOpen] = useState<boolean>(false);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false)
     const [detailPost, setDetailPost] = useState<Post>(fillerPost);
     const [posts, setPosts] = useState<Array<Post>>([]);
 
@@ -69,11 +61,37 @@ const Dashboard: React.FC<Props> = (props) => {
         setDetailsDialogOpen(true);
     };
 
+    const handleLogout = async () => {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`, {
+            credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Origin': window.location.host
+            }
+        });
+        console.log(res);
+        const text = await res.text();
+        console.log(text);
+        if (text === "done") {
+            window.location.href = "/";
+        }
+    };
+
     return (
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h5">{props.username}'s Dashboard</Typography>
+                    <Stack width="100%" direction="row" alignItems="center" justifyContent="space-between">
+                        <Typography variant="h5">Dashboard</Typography>
+                        {(props.userData) ? <Stack direction="row" alignItems="center" spacing={1}>
+                            <Typography>{props.userData.user_name}</Typography>
+                            <IconButton onClick={()=>{setMenuOpen(true);}}>
+                                <Avatar alt={props.userData.user_name} src={props.userData.user_img} ref={anchorRef}/>
+                            </IconButton>
+                        </Stack> 
+                        : <Typography>
+                            You are not logged in
+                        </Typography>}
+                    </Stack>
                 </Toolbar>
             </AppBar>
             <Stack margin="10px" direction="row" justifyContent="space-around" alignItems="center">
@@ -87,8 +105,9 @@ const Dashboard: React.FC<Props> = (props) => {
                     <PostCard post={item} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
                 </Grid>)}
             </Grid>
-            <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={props.username}/>
+            <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
             <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
+            <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
         </div>
     )
 }

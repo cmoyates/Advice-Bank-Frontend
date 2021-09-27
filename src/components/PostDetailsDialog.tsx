@@ -1,16 +1,6 @@
 import { Button, Dialog, DialogContentText, DialogContent, DialogTitle, Stack } from '@mui/material';
 import React, { Dispatch, SetStateAction } from 'react'
-
-interface Post {
-    post_id: number,
-    user_id: number,
-    user_name: string,
-    user_img: string,
-    title: string,
-    content: string,
-    tags: Array<string>,
-    ts: string
-};
+import { Post } from '../types/maintypes';
 
 interface Props {
     open: boolean,

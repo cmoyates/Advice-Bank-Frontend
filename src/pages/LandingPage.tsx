@@ -1,37 +1,23 @@
-import { Button, Container, Stack, TextField, Typography } from '@mui/material';
-import React, { Dispatch, SetStateAction, useState } from 'react';
-import { useHistory } from 'react-router';
+import { Button, Container, Stack } from '@mui/material';
+import React from 'react';
 
 interface Props {
-    setUsername: Dispatch<SetStateAction<string>>;
+
 }
 
 const LandingPage: React.FC<Props> = (props) => {
-    const history = useHistory();
 
-    const [username, setUsername] = useState<string>("");
+    const handleLogin = async () => {
+        window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google`, "_self");
+    }
 
     return (
         <div>
             <h1>Landing Page</h1>
             <Container maxWidth="sm">
                 <Stack direction="column">
-                    <Typography>Please enter your Username</Typography>
-                    <br/>
-                    <TextField 
-                    id="email" 
-                    label="Username" 
-                    variant="outlined" 
-                    value={username}
-                    onChange={(event) => {setUsername(event.target.value);}}
-                    autoComplete="off"
-                    />
-                    <br/>
-                    <Button variant="contained" onClick={()=>{
-                        history.push("/dashboard");
-                        props.setUsername(username);
-                    }}>
-                        Dashboard
+                    <Button variant="contained" onClick={()=>{handleLogin();}}>
+                        Login with Google
                     </Button>
                 </Stack>
             </Container>

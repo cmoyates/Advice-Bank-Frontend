@@ -1,16 +1,6 @@
 import { Card, Typography, Stack, Button, CardActions } from '@mui/material'
 import React from 'react'
-
-interface Post {
-    post_id: number,
-    user_id: number,
-    user_name: string,
-    user_img: string,
-    title: string,
-    content: string,
-    tags: Array<string>,
-    ts: string
-};
+import { Post } from '../types/maintypes';
 
 interface Props {
     post: Post,
