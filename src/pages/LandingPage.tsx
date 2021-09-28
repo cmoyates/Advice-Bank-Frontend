@@ -15,7 +15,7 @@ const LandingPage: React.FC<Props> = (props) => {
         <div>
             <h1>Landing Page</h1>
             <Container maxWidth="sm">
-                <Stack direction="column">
+                <Stack direction="column" alignItems="center">
                     <Button variant="contained" onClick={()=>{handleLogin();}}>
                         Login with Google
                     </Button>
