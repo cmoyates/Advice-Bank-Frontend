@@ -55,6 +55,8 @@ const PostDialog: React.FC<Props> = (props) => {
                     };
                     console.log(postData);
                     await props.handleSubmitPost(postData);
+                    setTitle("");
+                    setContent("");
                 }}>
                     Submit
                 </Button>
