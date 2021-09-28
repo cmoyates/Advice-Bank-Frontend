@@ -1,21 +1,13 @@
 import { AppBar, Avatar, Button, Grid, IconButton, Stack, TextField, Toolbar, Typography } from '@mui/material'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Redirect, useHistory } from 'react-router';
 import PostCard from '../components/PostCard';
 import PostDetailsDialog from '../components/PostDetailsDialog';
 import SettingsMenu from '../components/SettingsMenu';
 import SubmitPostDialog from "../components/SubmitPostDialog";
+import { userContext } from '../Context';
 import { Post, User } from '../types/maintypes';
 
-const fillerPost: Post = {
-    post_id: -1,
-    user_id: -1,
-    user_name: "",
-    user_img: "",
-    title: "",
-    content: "",
-    tags: [],
-    ts: ""
-}
 
 interface Props {
     userData: User | null
@@ -23,12 +15,16 @@ interface Props {
 
 const Dashboard: React.FC<Props> = (props) => {
 
+    const context = useContext(userContext);
+
+    let history = useHistory();
+
     const anchorRef = useRef(null);
 
     const [submitDialogOpen, setSubmitDialogOpen] = useState<boolean>(false);
     const [detailsDialogOpen, setDetailsDialogOpen] = useState<boolean>(false);
-    const [menuOpen, setMenuOpen] = useState<boolean>(false)
-    const [detailPost, setDetailPost] = useState<Post>(fillerPost);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [detailPost, setDetailPost] = useState<Post | null>(null);
     const [posts, setPosts] = useState<Array<Post>>([]);
 
     const currentDate = new Date();
@@ -65,18 +61,18 @@ const Dashboard: React.FC<Props> = (props) => {
         const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`, {
             credentials: 'include',
             headers: {
-                'Access-Control-Allow-Origin': window.location.host
+                'Access-Control-Allow-Origin': window.location.href
             }
         });
         console.log(res);
         const text = await res.text();
-        console.log(text);
         if (text === "done") {
-            window.location.href = "/";
+            context?.setUserObject(null);
+            history.push("/");
         }
     };
 
-    return (
+    return ((!false) ?
         <div>
             <AppBar position="static">
                 <Toolbar>
@@ -108,8 +104,9 @@ const Dashboard: React.FC<Props> = (props) => {
             <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
             <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
             <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
-        </div>
+        </div> 
+        : <Redirect to="/"/> 
     )
 }
 
-export default Dashboard
+export default Dashboard;

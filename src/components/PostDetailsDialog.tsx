@@ -5,16 +5,20 @@ import { Post } from '../types/maintypes';
 interface Props {
     open: boolean,
     setDialogOpen: Dispatch<SetStateAction<boolean>>,
-    post: Post,
+    post: Post | null,
     currentDate: Date
 };
 
 const PostDetailsDialog: React.FC<Props> = (props) => {
 
-    let date = new Date(props.post.ts);
-    const dateString = (date.getDate() === props.currentDate.getDate()) ? `today at ${date.toLocaleTimeString()}` : `on ${date.toLocaleDateString()}`;
+    let dateString: string | null = null;
+    if (props.post) {
+        let date = new Date(props.post.ts);
+        dateString = (date.getDate() === props.currentDate.getDate()) ? `today at ${date.toLocaleTimeString()}` : `on ${date.toLocaleDateString()}`;
+    }
+    
 
-    return (
+    return ((props.post) ?
         <Dialog fullWidth open={props.open} onClose={()=>props.setDialogOpen(false)}>
             <DialogTitle>{props.post.title}</DialogTitle>
             <DialogContent style={{color: "#000000", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "0px"}}>
@@ -31,7 +35,7 @@ const PostDetailsDialog: React.FC<Props> = (props) => {
             <DialogContentText padding="20px" style={{color: "#000000"}}>
                 "{props.post.content}"
             </DialogContentText>
-        </Dialog>
+        </Dialog> : null
     )
 }
 
