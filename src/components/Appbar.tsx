@@ -9,7 +9,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const authorizationBadges = [
     null,
     <CheckCircleIcon/>,
-    <ShieldIcon/>
+    <ShieldIcon style={{color: "#ffffff"}}/>
 ];
 
 
@@ -45,7 +45,6 @@ const Appbar: React.FC<Props> = (props) => {
                         badgeContent={
                             authorizationBadges[2]
                         }
-                        style={{color: "#ffffff"}}
                     >
                         <Avatar alt={props.userData.user_name} src={props.userData.user_img} ref={props.anchorRef}/>
                     </Badge>
