@@ -9,7 +9,18 @@ import { createTheme } from '@mui/material';
 import { userContext } from './Context';
 
 function App() {
-  const theme = createTheme()
+  const theme = createTheme({
+    palette: {
+      black: {
+        main: '#000000',
+        contrastText: '#fff',
+      },
+      white: {
+        main: '#ffffff',
+        contrastText: '#000',
+      },
+    }
+  });
 
   const context = useContext(userContext);
 
