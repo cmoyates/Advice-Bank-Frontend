@@ -9,7 +9,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const authorizationBadges = [
     null,
     <CheckCircleIcon/>,
-    <ShieldIcon style={{fill: "#ffffff", fillOpacity: 1}}/>
+    <ShieldIcon/>
 ];
 
 
