@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Drawer, IconButton, Stack, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Drawer, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState, useEffect, useRef, useContext, Fragment } from 'react'
 import { useHistory } from 'react-router';
 import PostDetailsDialog from '../components/PostDetailsDialog';
@@ -7,8 +7,8 @@ import SettingsMenu from '../components/SettingsMenu';
 import SubmitPostDialog from "../components/SubmitPostDialog";
 import { userContext } from '../Context';
 import { Post, User } from '../types/maintypes';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchStack from '../components/SearchStack';
+import Appbar from '../components/Appbar';
 
 interface Props {
     userData: User | null
@@ -77,45 +77,23 @@ const Dashboard: React.FC<Props> = (props) => {
         }
     };
 
-    return (<Fragment>
-        <AppBar position="static" style={{flexShrink: 0}}>
-            <Toolbar>
-            {(isMedScreen) ? <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-                onClick={()=>{setDrawerOpen(true);}}
-            >
-                <MenuIcon />
-            </IconButton> : null}
-            <Typography variant="h5" flexGrow={1} textAlign="start">Dashboard</Typography>
-            {(props.userData) ? <Stack direction="row" alignItems="center" spacing={1}>
-                <Typography>{props.userData.user_name}</Typography>
-                <IconButton onClick={()=>{setMenuOpen(true);}}>
-                    <Avatar alt={props.userData.user_name} src={props.userData.user_img} ref={anchorRef}/>
-                </IconButton>
-            </Stack> 
-            : <Typography>
-                You are not logged in
-            </Typography>}
-            </Toolbar>
-        </AppBar>
-        <div style={{display: "flex", flexDirection: "row", height: "100%", flex: 1, overflow: "auto"}}>
-            <SearchStack isMedScreen={isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen}/>
-            <div style={{flex: 3, display: "flex", flexDirection: "column", overflow: "auto", height: "100%"}}>
-                <PostGrid posts={posts} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
+    return (
+        <Fragment>
+            <Appbar userData={context?.userObject} isMedScreen={isMedScreen} setDrawerOpen={setDrawerOpen} setMenuOpen={setMenuOpen} anchorRef={anchorRef}/>
+            <div style={{display: "flex", flexDirection: "row", height: "100%", flex: 1, overflow: "auto"}}>
+                <SearchStack isMedScreen={isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen}/>
+                <div style={{flex: 3, display: "flex", flexDirection: "column", overflow: "auto", height: "100%"}}>
+                    <PostGrid posts={posts} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
+                </div>
             </div>
-        </div>
-        
-        <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
-        <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
-        <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
-        <Drawer anchor="left" open={drawerOpen && isMedScreen} onClose={()=>{setDrawerOpen(false);}}>
-            <SearchStack isMedScreen={!isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen}/>
-        </Drawer>
-    </Fragment>);
+            <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
+            <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
+            <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
+            <Drawer anchor="left" open={drawerOpen && isMedScreen} onClose={()=>{setDrawerOpen(false);}}>
+                <SearchStack isMedScreen={!isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen}/>
+            </Drawer>
+        </Fragment>
+    );
 }
 
 export default Dashboard;

@@ -21,7 +21,7 @@ const PostDetailsDialog: React.FC<Props> = (props) => {
     return ((props.post) ?
         <Dialog fullWidth open={props.open} onClose={()=>props.setDialogOpen(false)}>
             <DialogTitle>{props.post.title}</DialogTitle>
-            <DialogContent style={{color: "#000000", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "0px"}}>
+            <DialogContent style={{color: "#000000", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "0px", paddingTop: "0px"}}>
                 <div>Posted by {props.post.user_name}</div>
                 <div>Posted {dateString}</div>
                 {(props.post.tags.length > 0) ? <div>
