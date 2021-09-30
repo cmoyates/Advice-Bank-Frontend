@@ -9,7 +9,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const authorizationBadges = [
     null,
     <CheckCircleIcon/>,
-    <ShieldIcon style={{color: "#ffffff"}}/>
+    <ShieldIcon/>
 ];
 
 
@@ -42,6 +42,7 @@ const Appbar: React.FC<Props> = (props) => {
                     <Badge
                         overlap="circular"
                         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                        color="error"
                         badgeContent={
                             authorizationBadges[2]
                         }
