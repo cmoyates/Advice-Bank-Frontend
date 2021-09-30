@@ -1,5 +1,5 @@
-import { AppBar, Avatar, Button, Grid, IconButton, Stack, TextField, Toolbar, Typography } from '@mui/material'
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import { AppBar, Avatar, Button, Grid, IconButton, Paper, Stack, TextField, Toolbar, Typography } from '@mui/material'
+import React, { useState, useEffect, useRef, useContext, Fragment } from 'react'
 import { Redirect, useHistory } from 'react-router';
 import PostCard from '../components/PostCard';
 import PostDetailsDialog from '../components/PostDetailsDialog';
@@ -73,8 +73,8 @@ const Dashboard: React.FC<Props> = (props) => {
     };
 
     return ((!false) ?
-        <div>
-            <AppBar position="static">
+        <Fragment>
+            <AppBar position="static" style={{flexShrink: 0}}>
                 <Toolbar>
                     <Stack width="100%" direction="row" alignItems="center" justifyContent="space-between">
                         <Typography variant="h5">Dashboard</Typography>
@@ -90,23 +90,38 @@ const Dashboard: React.FC<Props> = (props) => {
                     </Stack>
                 </Toolbar>
             </AppBar>
-            <Stack margin="10px" direction="row" justifyContent="space-around" alignItems="center">
-                <TextField id="outlined-basic" label="Search" variant="outlined" />
-                <Button variant="contained" onClick={()=>setSubmitDialogOpen(true)}>
-                    Post
-                </Button>
-            </Stack>
-            <Grid container spacing={4} padding="20px">
-                {posts.map((item: Post, index: number)=><Grid item xs={6} key={index}>
-                    <PostCard post={item} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
-                </Grid>)}
-            </Grid>
+            <div style={{display: "flex", flexDirection: "row", height: "100%", flex: 1, overflow: "auto"}}>
+                <Paper style={{flex: 1, paddingTop: 30}}>
+                    <Stack direction="column" justifyContent="start" alignItems="center" spacing={4} height="100%">
+                        <Button variant="contained" onClick={()=>setSubmitDialogOpen(true)}>
+                            Post
+                        </Button>
+                        <TextField id="outlined-basic" label="Search" variant="outlined" />
+                    </Stack>
+                </Paper>
+                <div style={{flex: 3, display: "flex", flexDirection: "column", overflow: "auto", height: "100%"}}>
+                    <Grid container padding={2} spacing={4} minHeight="min-content">
+                        {posts.map((item: Post, index: number)=><Grid item xs={6} key={index}>
+                            <PostCard post={item} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
+                        </Grid>)}
+                    </Grid>
+                </div>
+            </div>
+            
             <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
             <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
             <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
-        </div> 
+        </Fragment> 
         : <Redirect to="/"/> 
     )
 }
 
 export default Dashboard;
+
+/*
+<Grid container spacing={4} padding="20px" minHeight="min-content" maxHeight="100%">
+                        {posts.map((item: Post, index: number)=><Grid item xs={6} key={index}>
+                            <PostCard post={item} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
+                        </Grid>)}
+                    </Grid>
+*/
