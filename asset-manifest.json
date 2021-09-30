@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Advice-Bank-Frontend/static/css/main.63c21515.chunk.css",
-    "main.js": "/Advice-Bank-Frontend/static/js/main.a8baabcf.chunk.js",
-    "main.js.map": "/Advice-Bank-Frontend/static/js/main.a8baabcf.chunk.js.map",
-    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.db1ac472.js",
-    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.db1ac472.js.map",
-    "static/js/2.0d916c1a.chunk.js": "/Advice-Bank-Frontend/static/js/2.0d916c1a.chunk.js",
-    "static/js/2.0d916c1a.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.0d916c1a.chunk.js.map",
-    "static/js/3.d87c4771.chunk.js": "/Advice-Bank-Frontend/static/js/3.d87c4771.chunk.js",
-    "static/js/3.d87c4771.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.d87c4771.chunk.js.map",
+    "main.js": "/Advice-Bank-Frontend/static/js/main.c4788e0c.chunk.js",
+    "main.js.map": "/Advice-Bank-Frontend/static/js/main.c4788e0c.chunk.js.map",
+    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.1cd8f161.js",
+    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.1cd8f161.js.map",
+    "static/js/2.df3e8131.chunk.js": "/Advice-Bank-Frontend/static/js/2.df3e8131.chunk.js",
+    "static/js/2.df3e8131.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.df3e8131.chunk.js.map",
+    "static/js/3.859fd467.chunk.js": "/Advice-Bank-Frontend/static/js/3.859fd467.chunk.js",
+    "static/js/3.859fd467.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.859fd467.chunk.js.map",
     "index.html": "/Advice-Bank-Frontend/index.html",
     "static/css/main.63c21515.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.63c21515.chunk.css.map",
-    "static/js/2.0d916c1a.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.0d916c1a.chunk.js.LICENSE.txt"
+    "static/js/2.df3e8131.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.df3e8131.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.db1ac472.js",
-    "static/js/2.0d916c1a.chunk.js",
+    "static/js/runtime-main.1cd8f161.js",
+    "static/js/2.df3e8131.chunk.js",
     "static/css/main.63c21515.chunk.css",
-    "static/js/main.a8baabcf.chunk.js"
+    "static/js/main.c4788e0c.chunk.js"
   ]
 }
