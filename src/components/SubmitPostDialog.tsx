@@ -47,13 +47,14 @@ const PostDialog: React.FC<Props> = (props) => {
             <DialogActions>
                 <Button variant="contained" onClick={async ()=>{
                     props.setDialogOpen(false);
+                    const tagArray = Array.from(tags);
                     const postData = {
                         user_id: 1,
                         user_name: props.username,
                         user_img: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
                         title: title,
                         content: content,
-                        tags: Array.from(tags)
+                        tags: tagArray
                     };
                     console.log(postData);
                     await props.handleSubmitPost(postData);
