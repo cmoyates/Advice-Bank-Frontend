@@ -1,16 +1,7 @@
-import { AppBar, Avatar, Badge, IconButton, Stack, Toolbar, Typography } from '@mui/material';
+import { AppBar, Avatar, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import React, { Dispatch, SetStateAction } from 'react';
 import {User} from "../types/maintypes";
 import MenuIcon from '@mui/icons-material/Menu';
-import ShieldIcon from '@mui/icons-material/Shield';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
-
-const authorizationBadges = [
-    null,
-    <CheckCircleIcon/>,
-    <ShieldIcon style={{fill: "#ffffff", fillOpacity: 1}}/>
-];
 
 
 interface Props {
@@ -39,15 +30,7 @@ const Appbar: React.FC<Props> = (props) => {
             {(props.userData) ? <Stack direction="row" alignItems="center" spacing={1}>
                 <Typography>{props.userData.user_name}</Typography>
                 <IconButton onClick={()=>{props.setMenuOpen(true);}}>
-                    <Badge
-                        overlap="circular"
-                        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                        badgeContent={
-                            authorizationBadges[2]
-                        }
-                    >
-                        <Avatar alt={props.userData.user_name} src={props.userData.user_img} ref={props.anchorRef}/>
-                    </Badge>
+                    <Avatar alt={props.userData.user_name} src={props.userData.user_img} ref={props.anchorRef}/>
                 </IconButton>
             </Stack> 
             : <Typography>
