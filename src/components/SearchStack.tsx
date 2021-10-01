@@ -8,7 +8,8 @@ interface Props {
     setSubmitDialogOpen: Dispatch<SetStateAction<boolean>>,
     maxWidth?: string | number | undefined,
     tags: Set<string>
-    setTags: Dispatch<SetStateAction<Set<string>>>
+    setTags: Dispatch<SetStateAction<Set<string>>>,
+    isLoggedIn: boolean
 }
 
 const SearchStack: React.FC<Props> = (props) => {
@@ -26,9 +27,9 @@ const SearchStack: React.FC<Props> = (props) => {
     return (
         <Root>
             <Stack direction="column" justifyContent="start" alignItems="center" spacing={2} height="100%" paddingX={4} maxWidth={props.maxWidth}>
-                <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
+                {(props.isLoggedIn) ? <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
                     Post
-                </Button>
+                </Button> : null}
                 <TextField id="outlined-basic" label="Search" variant="outlined" />
                 <TagInput fullWidth tags={props.tags} setTags={props.setTags}/>
             </Stack>
