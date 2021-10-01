@@ -1,10 +1,14 @@
 import { Button, Paper, Stack, styled, TextField } from '@mui/material';
 import React, { Dispatch, SetStateAction } from 'react'
+import TagInput from './TagInput';
 
 
 interface Props {
     isMedScreen: boolean,
-    setSubmitDialogOpen: Dispatch<SetStateAction<boolean>>
+    setSubmitDialogOpen: Dispatch<SetStateAction<boolean>>,
+    maxWidth?: string | number | undefined,
+    tags: Set<string>
+    setTags: Dispatch<SetStateAction<Set<string>>>
 }
 
 const SearchStack: React.FC<Props> = (props) => {
@@ -15,16 +19,18 @@ const SearchStack: React.FC<Props> = (props) => {
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
-        display: (props.isMedScreen) ? "none" : "flex"
-      }));
+        display: (props.isMedScreen) ? "none" : "flex",
+        maxWidth: "90vw"
+    }));
 
     return (
         <Root>
-            <Stack direction="column" justifyContent="start" alignItems="center" spacing={4} height="100%">
+            <Stack direction="column" justifyContent="start" alignItems="center" spacing={2} height="100%" paddingX={4} maxWidth={props.maxWidth}>
                 <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
                     Post
                 </Button>
                 <TextField id="outlined-basic" label="Search" variant="outlined" />
+                <TagInput fullWidth tags={props.tags} setTags={props.setTags}/>
             </Stack>
         </Root>
     )
