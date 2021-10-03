@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/Advice-Bank-Frontend/static/css/main.63c21515.chunk.css",
-    "main.js": "/Advice-Bank-Frontend/static/js/main.8c853704.chunk.js",
-    "main.js.map": "/Advice-Bank-Frontend/static/js/main.8c853704.chunk.js.map",
-    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.d60ad4e0.js",
-    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.d60ad4e0.js.map",
-    "static/js/2.fd37d9e6.chunk.js": "/Advice-Bank-Frontend/static/js/2.fd37d9e6.chunk.js",
-    "static/js/2.fd37d9e6.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.fd37d9e6.chunk.js.map",
-    "static/js/3.91de5870.chunk.js": "/Advice-Bank-Frontend/static/js/3.91de5870.chunk.js",
-    "static/js/3.91de5870.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.91de5870.chunk.js.map",
+    "main.css": "/Advice-Bank-Frontend/static/css/main.55330aff.chunk.css",
+    "main.js": "/Advice-Bank-Frontend/static/js/main.0a0f86d0.chunk.js",
+    "main.js.map": "/Advice-Bank-Frontend/static/js/main.0a0f86d0.chunk.js.map",
+    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.51f1622e.js",
+    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.51f1622e.js.map",
+    "static/js/2.45a60d9a.chunk.js": "/Advice-Bank-Frontend/static/js/2.45a60d9a.chunk.js",
+    "static/js/2.45a60d9a.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.45a60d9a.chunk.js.map",
+    "static/js/3.72e1861e.chunk.js": "/Advice-Bank-Frontend/static/js/3.72e1861e.chunk.js",
+    "static/js/3.72e1861e.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.72e1861e.chunk.js.map",
     "index.html": "/Advice-Bank-Frontend/index.html",
-    "static/css/main.63c21515.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.63c21515.chunk.css.map",
-    "static/js/2.fd37d9e6.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.fd37d9e6.chunk.js.LICENSE.txt"
+    "static/css/main.55330aff.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.55330aff.chunk.css.map",
+    "static/js/2.45a60d9a.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.45a60d9a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Advice-Bank-Frontend/static/media/landingBackground.b3888a6e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d60ad4e0.js",
-    "static/js/2.fd37d9e6.chunk.js",
-    "static/css/main.63c21515.chunk.css",
-    "static/js/main.8c853704.chunk.js"
+    "static/js/runtime-main.51f1622e.js",
+    "static/js/2.45a60d9a.chunk.js",
+    "static/css/main.55330aff.chunk.css",
+    "static/js/main.0a0f86d0.chunk.js"
   ]
 }
