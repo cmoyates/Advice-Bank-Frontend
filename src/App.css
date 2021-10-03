@@ -8,7 +8,7 @@
 .bgImage {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.781), rgba(0, 0, 0, 0.2)), url("./images/landingBackground.jpg");
+  background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.781), rgba(0, 0, 0, 0.2)), url("./images/Advice-Stock-Photo.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
