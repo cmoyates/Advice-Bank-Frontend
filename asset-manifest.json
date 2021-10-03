@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Advice-Bank-Frontend/static/css/main.55330aff.chunk.css",
+    "main.css": "/Advice-Bank-Frontend/static/css/main.41e5fc59.chunk.css",
     "main.js": "/Advice-Bank-Frontend/static/js/main.0a0f86d0.chunk.js",
     "main.js.map": "/Advice-Bank-Frontend/static/js/main.0a0f86d0.chunk.js.map",
     "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.51f1622e.js",
@@ -10,14 +10,14 @@
     "static/js/3.72e1861e.chunk.js": "/Advice-Bank-Frontend/static/js/3.72e1861e.chunk.js",
     "static/js/3.72e1861e.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.72e1861e.chunk.js.map",
     "index.html": "/Advice-Bank-Frontend/index.html",
-    "static/css/main.55330aff.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.55330aff.chunk.css.map",
+    "static/css/main.41e5fc59.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.41e5fc59.chunk.css.map",
     "static/js/2.45a60d9a.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.45a60d9a.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/Advice-Bank-Frontend/static/media/landingBackground.b3888a6e.jpg"
+    "static/media/App.css": "/Advice-Bank-Frontend/static/media/Advice-Stock-Photo.b3888a6e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.51f1622e.js",
     "static/js/2.45a60d9a.chunk.js",
-    "static/css/main.55330aff.chunk.css",
+    "static/css/main.41e5fc59.chunk.css",
     "static/js/main.0a0f86d0.chunk.js"
   ]
 }
