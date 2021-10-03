@@ -44,6 +44,7 @@ const Dashboard: React.FC<Props> = (props) => {
         setPosts(data);
     }
     useEffect( () => {
+        document.title = "Dashboard";
         fetchPost();
     }, [])
 
