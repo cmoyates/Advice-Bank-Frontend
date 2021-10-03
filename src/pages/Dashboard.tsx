@@ -91,7 +91,7 @@ const Dashboard: React.FC<Props> = (props) => {
             </div>
             <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>
             <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
-            <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
+            <SettingsMenu userPrivilege={context?.userObject?.user_privilege} open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
             <Drawer anchor="left" open={drawerOpen && isMedScreen} onClose={()=>{setDrawerOpen(false);}} style={{width: "90vw", maxWidth: "90vw"}}>
                 <SearchStack userPrivilege={context?.userObject?.user_privilege} isMedScreen={!isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
             </Drawer>

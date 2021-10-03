@@ -28,7 +28,7 @@ const SearchStack: React.FC<Props> = (props) => {
     return (
         <Root>
             <Stack direction="column" justifyContent="start" alignItems="center" spacing={2} height="100%" paddingX={4} maxWidth={props.maxWidth}>
-                {(props.isLoggedIn && props.userPrivilege && props.userPrivilege > 0) ? <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
+                {(props.isLoggedIn && props.userPrivilege !== undefined && props.userPrivilege > 0) ? <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
                     Post
                 </Button> : null}
                 <TextField id="outlined-basic" label="Search" variant="outlined" />

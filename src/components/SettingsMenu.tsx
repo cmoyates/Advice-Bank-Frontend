@@ -5,6 +5,7 @@ import React from 'react'
 interface Props {
     open: boolean,
     anchorRef: React.MutableRefObject<null>,
+    userPrivilege: number | undefined,
     handleClose: ()=>void,
     handleLogout: ()=>void
 };
@@ -40,6 +41,21 @@ const SettingsMenu: React.FC<Props> = (props) => {
                         </ListItemIcon>
                         <ListItemText>Logout</ListItemText>
                     </MenuItem>
+                    {(props.userPrivilege !== undefined) ? <div>
+                        <MenuItem onClick={()=>{console.log("Saved")}}>
+                            <ListItemIcon>
+                                <Logout/>
+                            </ListItemIcon>
+                            <ListItemText>Saved</ListItemText>
+                        </MenuItem>
+                        {(props.userPrivilege > 1) ? 
+                        <MenuItem onClick={()=>{console.log("Manage Users")}}>
+                            <ListItemIcon>
+                                <Logout/>
+                            </ListItemIcon>
+                            <ListItemText>Manage Users</ListItemText>
+                        </MenuItem> : null}
+                    </div> : null}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
