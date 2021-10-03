@@ -3,7 +3,7 @@ export interface User {
     user_email: string;
     user_name: string;
     user_img: string;
-    is_admin: boolean;
+    user_privilege: number;
     saved: Array<number>;
 };
 

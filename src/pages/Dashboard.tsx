@@ -84,7 +84,7 @@ const Dashboard: React.FC<Props> = (props) => {
         <Fragment>
             <Appbar userData={context?.userObject} isMedScreen={isMedScreen} setDrawerOpen={setDrawerOpen} setMenuOpen={setMenuOpen} anchorRef={anchorRef}/>
             <div style={{display: "flex", flexDirection: "row", height: "100%", flex: 1, overflow: "auto"}}>
-                <SearchStack isMedScreen={isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
+                <SearchStack userPrivilege={context?.userObject?.user_privilege} isMedScreen={isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
                 <div style={{flex: 3, display: "flex", flexDirection: "column", overflow: "auto", height: "100%"}}>
                     <PostGrid posts={posts} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
                 </div>
@@ -93,7 +93,7 @@ const Dashboard: React.FC<Props> = (props) => {
             <PostDetailsDialog open={detailsDialogOpen} setDialogOpen={setDetailsDialogOpen} post={detailPost} currentDate={currentDate}/>
             <SettingsMenu open={menuOpen} anchorRef={anchorRef} handleClose={()=>{setMenuOpen(false);}} handleLogout={handleLogout}/>
             <Drawer anchor="left" open={drawerOpen && isMedScreen} onClose={()=>{setDrawerOpen(false);}} style={{width: "90vw", maxWidth: "90vw"}}>
-                <SearchStack isMedScreen={!isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
+                <SearchStack userPrivilege={context?.userObject?.user_privilege} isMedScreen={!isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
             </Drawer>
         </Fragment>
     );
