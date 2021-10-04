@@ -53,7 +53,7 @@ const SettingsMenu: React.FC<Props> = (props) => {
                             <ListItemIcon>
                                 <People/>
                             </ListItemIcon>
-                            <ListItemText>Manage Users</ListItemText>
+                            <ListItemText>Users</ListItemText>
                         </MenuItem> : null}
                     </div> : null}
                   </MenuList>
