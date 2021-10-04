@@ -5,7 +5,7 @@ import PostDetailsDialog from '../components/PostDetailsDialog';
 import PostGrid from '../components/PostGrid';
 import SettingsMenu from '../components/SettingsMenu';
 import SubmitPostDialog from "../components/SubmitPostDialog";
-import { userContext } from '../Context';
+import { userContext } from '../contexts/UserContext';
 import { Post, User } from '../types/maintypes';
 import SearchStack from '../components/SearchStack';
 import Appbar from '../components/Appbar';

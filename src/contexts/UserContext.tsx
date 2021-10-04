@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext, SetStateAction, Dispatch, Context } from 'react';
-import { User } from './types/maintypes';
+import { User } from '../types/maintypes';
 
 
 

@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 import NotFoundPage from './pages/NotFoundPage';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
-import { userContext } from './Context';
+import { userContext } from './contexts/UserContext';
 
 function App() {
   const theme = createTheme();
