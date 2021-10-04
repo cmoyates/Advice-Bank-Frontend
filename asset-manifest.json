@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Advice-Bank-Frontend/static/css/main.41e5fc59.chunk.css",
-    "main.js": "/Advice-Bank-Frontend/static/js/main.c0071a72.chunk.js",
-    "main.js.map": "/Advice-Bank-Frontend/static/js/main.c0071a72.chunk.js.map",
-    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.69d923f5.js",
-    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.69d923f5.js.map",
-    "static/js/2.92ab53d1.chunk.js": "/Advice-Bank-Frontend/static/js/2.92ab53d1.chunk.js",
-    "static/js/2.92ab53d1.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.92ab53d1.chunk.js.map",
-    "static/js/3.a9d3c8d2.chunk.js": "/Advice-Bank-Frontend/static/js/3.a9d3c8d2.chunk.js",
-    "static/js/3.a9d3c8d2.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.a9d3c8d2.chunk.js.map",
+    "main.js": "/Advice-Bank-Frontend/static/js/main.c15c712a.chunk.js",
+    "main.js.map": "/Advice-Bank-Frontend/static/js/main.c15c712a.chunk.js.map",
+    "runtime-main.js": "/Advice-Bank-Frontend/static/js/runtime-main.fbcaa744.js",
+    "runtime-main.js.map": "/Advice-Bank-Frontend/static/js/runtime-main.fbcaa744.js.map",
+    "static/js/2.e4ac4232.chunk.js": "/Advice-Bank-Frontend/static/js/2.e4ac4232.chunk.js",
+    "static/js/2.e4ac4232.chunk.js.map": "/Advice-Bank-Frontend/static/js/2.e4ac4232.chunk.js.map",
+    "static/js/3.0e0e8d85.chunk.js": "/Advice-Bank-Frontend/static/js/3.0e0e8d85.chunk.js",
+    "static/js/3.0e0e8d85.chunk.js.map": "/Advice-Bank-Frontend/static/js/3.0e0e8d85.chunk.js.map",
     "index.html": "/Advice-Bank-Frontend/index.html",
     "static/css/main.41e5fc59.chunk.css.map": "/Advice-Bank-Frontend/static/css/main.41e5fc59.chunk.css.map",
-    "static/js/2.92ab53d1.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.92ab53d1.chunk.js.LICENSE.txt",
+    "static/js/2.e4ac4232.chunk.js.LICENSE.txt": "/Advice-Bank-Frontend/static/js/2.e4ac4232.chunk.js.LICENSE.txt",
     "static/media/App.css": "/Advice-Bank-Frontend/static/media/Advice-Stock-Photo.b3888a6e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.69d923f5.js",
-    "static/js/2.92ab53d1.chunk.js",
+    "static/js/runtime-main.fbcaa744.js",
+    "static/js/2.e4ac4232.chunk.js",
     "static/css/main.41e5fc59.chunk.css",
-    "static/js/main.c0071a72.chunk.js"
+    "static/js/main.c15c712a.chunk.js"
   ]
 }
