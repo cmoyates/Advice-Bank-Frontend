@@ -1,6 +1,7 @@
 import { Button, Paper, Stack, styled, TextField } from '@mui/material';
 import React, { Dispatch, SetStateAction } from 'react'
 import TagInput from './TagInput';
+import DateRangePicker from './DateRangePicker'
 
 
 interface Props {
@@ -27,12 +28,17 @@ const SearchStack: React.FC<Props> = (props) => {
 
     return (
         <Root>
-            <Stack direction="column" justifyContent="start" alignItems="center" spacing={2} height="100%" paddingX={4} maxWidth={props.maxWidth}>
+            <Stack direction="column" justifyContent="space-around" alignItems="center" spacing={2} height="100%" paddingX={4} maxWidth={props.maxWidth}>
                 {(props.isLoggedIn && props.userPrivilege !== undefined && props.userPrivilege > 0) ? <Button variant="contained" onClick={()=>props.setSubmitDialogOpen(true)}>
                     Post
                 </Button> : null}
-                <TextField id="outlined-basic" label="Search" variant="outlined" />
+                <TextField id="outlined-basic" label="Content" variant="outlined" autoComplete="off" fullWidth/>
                 <TagInput fullWidth tags={props.tags} setTags={props.setTags}/>
+                <TextField id="outlined-basic" label="Author" variant="outlined" autoComplete="off" fullWidth/>
+                <DateRangePicker/>
+                <Button variant="contained">
+                    Search
+                </Button>
             </Stack>
         </Root>
     )

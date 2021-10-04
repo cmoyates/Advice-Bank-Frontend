@@ -5,7 +5,8 @@ import { Post } from '../types/maintypes';
 interface Props {
     post: Post,
     handleShowDetails: (post: Post) => void,
-    currentDate: Date
+    currentDate: Date,
+    addTag: (tagString: string) => void
 };
 
 const PostCard: React.FC<Props> = (props) => {
@@ -18,7 +19,8 @@ const PostCard: React.FC<Props> = (props) => {
             <Stack direction="row" alignItems="center" justifyContent="space-between" marginX="20px">
                 <Typography variant="h4" marginTop="10px">{props.post.title}</Typography>
                 <Stack direction="row" spacing={1}>
-                    {props.post.tags.map((item: string, index: number)=><Button key={index} variant="outlined" size="small">
+                    {props.post.tags.map((item: string, index: number)=>
+                    <Button key={index} variant="outlined" size="small" onClick={()=>{props.addTag(item);}}>
                         {item}
                     </Button>)}
                 </Stack>

@@ -31,7 +31,7 @@ const Dashboard: React.FC<Props> = (props) => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
     const [detailPost, setDetailPost] = useState<Post | null>(null);
-    const [searchTags, setSearchTags] = useState<Set<string>>(new Set<string>())
+    const [searchTags, setSearchTags] = useState<Set<string>>(new Set<string>());
     const [posts, setPosts] = useState<Array<Post>>([]);
 
     const currentDate = new Date();
@@ -80,13 +80,17 @@ const Dashboard: React.FC<Props> = (props) => {
         }
     };
 
+    const addTag = (tagString: string) => {
+        setSearchTags(new Set<string>(searchTags).add(tagString));
+    }
+
     return (
         <Fragment>
             <Appbar userData={context?.userObject} isMedScreen={isMedScreen} setDrawerOpen={setDrawerOpen} setMenuOpen={setMenuOpen} anchorRef={anchorRef}/>
             <div style={{display: "flex", flexDirection: "row", height: "100%", flex: 1, overflow: "auto"}}>
                 <SearchStack userPrivilege={context?.userObject?.user_privilege} isMedScreen={isMedScreen} setSubmitDialogOpen={setSubmitDialogOpen} tags={searchTags} setTags={setSearchTags} isLoggedIn={isLoggedIn}/>
                 <div style={{flex: 3, display: "flex", flexDirection: "column", overflow: "auto", height: "100%"}}>
-                    <PostGrid posts={posts} handleShowDetails={handleShowDetails} currentDate={currentDate}/>
+                    <PostGrid posts={posts} handleShowDetails={handleShowDetails} currentDate={currentDate} addTag={addTag}/>
                 </div>
             </div>
             <SubmitPostDialog open={submitDialogOpen} setDialogOpen={setSubmitDialogOpen} handleSubmitPost={handleSubmitPost} username={(props.userData) ? props.userData.user_name : ""}/>

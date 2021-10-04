@@ -37,7 +37,7 @@ const TagInput: React.FC<Props> = (props) => {
     }
 
     return (
-        <div>
+        <div style={{maxWidth: "100%", minWidth: "100%"}}>
             <TextField
             id="outlined-basic" 
             label="Tags"
@@ -54,7 +54,7 @@ const TagInput: React.FC<Props> = (props) => {
             }}
             onKeyDown={keyPress}
             />
-            <Grid container spacing={1} paddingTop={1}>
+            <Grid container spacing={1} paddingTop={1} maxWidth="100%">
                 {Array.from(props.tags).map((item, index)=>(
                     <Grid item key={index}>
                         <Chip 
