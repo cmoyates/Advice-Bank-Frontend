@@ -1,4 +1,4 @@
-import { Logout } from '@mui/icons-material'
+import { Logout, Bookmarks, People } from '@mui/icons-material'
 import { ClickAwayListener, Grow, ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Popper } from '@mui/material'
 import React from 'react'
 
@@ -44,14 +44,14 @@ const SettingsMenu: React.FC<Props> = (props) => {
                     {(props.userPrivilege !== undefined) ? <div>
                         <MenuItem onClick={()=>{console.log("Saved")}}>
                             <ListItemIcon>
-                                <Logout/>
+                                <Bookmarks/>
                             </ListItemIcon>
                             <ListItemText>Saved</ListItemText>
                         </MenuItem>
                         {(props.userPrivilege > 1) ? 
                         <MenuItem onClick={()=>{console.log("Manage Users")}}>
                             <ListItemIcon>
-                                <Logout/>
+                                <People/>
                             </ListItemIcon>
                             <ListItemText>Manage Users</ListItemText>
                         </MenuItem> : null}
